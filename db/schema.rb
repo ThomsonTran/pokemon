@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_23_000100) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_23_190401) do
   create_table "monsters", force: :cascade do |t|
     t.string "name"
     t.string "type_1"
@@ -26,6 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_23_000100) do
     t.boolean "legendary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "number"
+    t.index ["number"], name: "index_monsters_on_number"
   end
 
 end
