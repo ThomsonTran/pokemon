@@ -1,8 +1,11 @@
 class MonstersController < ApplicationController
     protect_from_forgery
 
+    POKEMON_PER_PAGE = 100
+
     def index
-        render json: Monster.all
+        @page = params.fetch(:page,0).to_i
+        render json: Monster.offset(@page * POKEMON_PER_PAGE).limit(POKEMON_PER_PAGE)
     end
 
     def create
