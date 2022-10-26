@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version  
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a)
 
-Things you may want to cover:
+* Database  
+run `rails db:migrate`  
+seed with `rails db:seed`
 
-* Ruby version
+* CRUD  
 
-* System dependencies
+| Verb | URI Pattern    | Action |
+| - | - | - |
+|GET    |/monsters(.:format)|                                                                               monsters#index|
+|POST   |/monsters(.:format) |                                                                              monsters#create|
+|PATCH  |/monsters/:id(.:format)|                                                                           monsters#update|
+|PUT    |/monsters/:id(.:format) |                                                                          monsters#update|
+|DELETE |/monsters/:id(.:format)  |                                                                         monsters#destroy|
 
-* Configuration
+* Viewing pagination
 
-* Database creation
+Pass page value in query string. 100 pokemon per page
 
-* Database initialization
+monsters?page=0  
+monsters?page=1  
+monsters?page=2  
+monsters?page=3  
+monsters?page=4  
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
